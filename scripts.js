@@ -1,4 +1,4 @@
-//var position;
+var loc;
 
 function updateLocation() {
     if (navigator && navigator.geolocation) {
@@ -16,18 +16,20 @@ function errorCallback() {
 function successCallback(position) {
     var lon = position.coords.longitude;
     var lat = position.coords.latitude;
-    // position = lat + ", " + lon;
-    console.log(lat + ", " + lon);
-    document.getElementById("pos").value = lat + ", " + lon;
+    loc = lat + "," + lon;
+    console.log(loc);
 
 }
 
-function getPosition() {
-    //
-    // return position;
+function getLocation() {
+    return loc;
 }
 
-function setPosition() {
+function setLocation() {
     updateLocation();
-    // document.getElementById("pos").value = getPosition();
+    console.log({userLocation: loc, store: document.getElementById("sel1").value});
+    $.post("",{userLocation: loc, store: document.getElementById("sel1").value},fuckyeah);
+}
+function fuckyeah(){
+  console.log("fuckyeah");
 }
