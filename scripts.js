@@ -1,35 +1,18 @@
 var loc;
 
-function updateLocation() {
+function sendLocation() {
     if (navigator && navigator.geolocation) {
-        return navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        return navigator.geolocation.getCurrentPosition(successCallback, ()=>console.log('Geolocation error'));
     } else {
         console.log('Geolocation is not supported');
     }
 
 }
 
-function errorCallback() {
-    console.log('Geolocation error');
-}
-
 function successCallback(position) {
-    var lon = position.coords.longitude;
-    var lat = position.coords.latitude;
-    loc = lat + "," + lon;
-    console.log(loc);
+		$.post("/",{lat:position.coords.latitude,long:position.coords.longitude, store: document.getElementById("sel1").value},
+		function(res,err){
+			consoe.log("Through");
+		});
 
-}
-
-function getLocation() {
-    return loc;
-}
-
-function setLocation() {
-    updateLocation();
-    console.log({userLocation: loc, store: document.getElementById("sel1").value});
-    $.post("",{userLocation: loc, store: document.getElementById("sel1").value},fuckyeah);
-}
-function fuckyeah(){
-  console.log("fuckyeah");
 }
