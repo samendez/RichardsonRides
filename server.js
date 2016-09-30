@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json());
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/web/save_money.html")
+    res.sendFile(__dirname + "save_money.html")
 });
 app.post("/", function(req, res){
 	console.log(req.body);
