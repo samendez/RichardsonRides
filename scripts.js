@@ -14,6 +14,11 @@ function errorCallback(){
 function successCallback(position) {
   var lon = position.coords.longitude;
   var lat = position.coords.latitude;
-  document.getElementById("position").title = lat + ", " + lon;
+  document.getElementById("position").value = lat + ", " + lon;
 
+}
+
+function onClick(){
+  var el = document.getElementById("locBut");
+    el.addEventListener("click", updateLocation(), false);
 }
