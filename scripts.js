@@ -1,6 +1,7 @@
 var loc;
 
 function sendLocation() {
+	console.log("Polling Coordinates");
     if (navigator && navigator.geolocation) {
         return navigator.geolocation.getCurrentPosition(successCallback, ()=>console.log('Geolocation error'));
     } else {
@@ -10,9 +11,13 @@ function sendLocation() {
 }
 
 function successCallback(position) {
-		$.post("/",{lat:position.coords.latitude,long:position.coords.longitude, store: document.getElementById("sel1").value},
+		console.log("Coordinates Recieved");
+		console.log("Sending Coordinates");
+		$.post("/",{lat:position.coords.latitude,
+			long:position.coords.longitude,
+			 store: document.getElementById("sel1").value},
 		function(res,err){
-			consoe.log("Through");
+			console.log("Through");
 		});
 
 }
