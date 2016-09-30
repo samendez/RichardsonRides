@@ -10,9 +10,25 @@ function sendLocation() {
 }
 
 function successCallback(position) {
+  loc = position.coords;
 		$.post("/",{lat:position.coords.latitude,long:position.coords.longitude, store: document.getElementById("sel1").value},
 		function(res,err){
 			consoe.log("Through");
 		});
+}
+
+function getLatitude()  {
+  return loc.latitude;
+}
+function getLongitude() {
+  return loc.longitude;
+}
+
+function updateLocation() {
+    if (navigator && navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition((position)=>{map.panTo(new google.maps.LatLng(position.latitude,position.longitude))},map: map,title: 'You Are Here'});}, ()=>console.log('Geolocation error'));
+    } else {
+        console.log('Geolocation is not supported');
+    }
 
 }
