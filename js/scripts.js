@@ -13,11 +13,11 @@ function sendLocation() {
 
 function successCallback(position) {
 	console.log("Sending Coordinates... ");
-
   loc = position.coords;
-		$.post("/",{lat:position.coords.latitude,long:position.coords.longitude, store: document.getElementById("sel1").value},
-		function(res,err){
+		$.post("/location",{lat:position.coords.latitude,long:position.coords.longitude, store: document.getElementById("sel1").value},
+		function(data){
 			playad();
+			if (typeof data.redirect == 'string') window.location = data.redirect;
 			console.log("Success");
 		});
 }
