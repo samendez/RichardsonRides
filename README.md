@@ -1,6 +1,6 @@
 # Richardson Rides
 
-Richardson Rides is a project that aims to raise awareness of public transport in the city of Richardson. This is accomplished by creating an system that rewards the user with discount prices at select stores.
+Richardson Rides is a project that aims to raise awareness of public transport in the city of Richardson. This is accomplished by creating an system that rewards the user with discount prices at select stores. It's a cheap and efficent alternative to driving.
 
 # How It Works
 
@@ -8,7 +8,7 @@ The system relies on GPS technology. The user will get on a bus that is equipped
 
 # Impact and Incentive
 
-Our goal was to create a system that will benefit the city of Richardson in as many ways as possible. Our user-reward system has the potential to reduce traffic, help low-income citizens, raise awareness of public transport, and even reduce the carbon footprint for the city. Stores will want to be apart of this system as it will be good publicity for them as well as increase potential customers. We want to make it as easy as possible for store owners to implement our system and we will work diligently with each to ensure a smooth operation.
+Our goal was to create a system that will benefit the city of Richardson in as many ways as possible. Our user-reward system has the potential to reduce traffic, help low-income citizens, raise awareness of public transport, and even reduce the carbon footprint for the city. Stores will want to be apart of this system as it will be good publicity for them as well as increase potential customers. We want to make it as easy as possible for store owners to implement our system and we will work diligently with each to ensure a smooth operation. 
 
 # Future
 
