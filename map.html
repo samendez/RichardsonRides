@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <script src = "scripts.js"></script>
+  <script src = "google_scripts.js"></script>
     <div class="bar">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -44,10 +44,15 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 32.969046, lng: -96.720065},
-          zoom: 12
+          center: {lat: 0, lng: 0},
+          zoom: 13
         });
+        console.log('map initialized');
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
         updateLocation();
+        window.setTimeout(function(){map.panTo(new google.maps.LatLng(getLatitude(),getLongitude())),{map: map,title: 'You Are Here'};},1000);
+        var myVar = window.setInterval(updateLocation, 1000);
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4C9uC6Hv19Lf4bYhmURb6llwWV57pvMU&callback=initMap"
