@@ -2,6 +2,8 @@
 
 Richardson Rides is a project that aims to raise awareness of public transport in the city of Richardson. This is accomplished by creating an system that rewards the user with discount prices at select stores. It's a cheap and efficent alternative to driving.
 
+A live version of the prototype can be found at http://bus.apt5924.xyz:8080/
+
 # How It Works
 
 The system relies on GPS technology. The user will get on a bus that is equipped with a GPS tracker and connect to our website on their mobile device. The user's location will then be compared to the location of the bus and after an interval, it will be compared again. If both comparisons come back true then the user is rewarded with a QR code which can be used at the selected store.
